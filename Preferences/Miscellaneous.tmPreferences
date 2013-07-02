@@ -8,6 +8,8 @@
 	<string>source.ini</string>
 	<key>settings</key>
 	<dict>
+		<key>disableIndentCorrections</key>
+		<true/>
 		<key>highlightPairs</key>
 		<array>
 			<array>
@@ -23,6 +25,8 @@
 				<string>}</string>
 			</array>
 		</array>
+		<key>indentOnPaste</key>
+		<string>simple</string>
 		<key>shellVariables</key>
 		<array>
 			<dict>
