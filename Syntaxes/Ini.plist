@@ -221,6 +221,12 @@
 					<key>include</key>
 					<string>#escape</string>
 				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b[0-9]+\b</string>
+					<key>name</key>
+					<string>constant.numeric.ini</string>
+				</dict>
 			</array>
 		</dict>
 	</array>
