@@ -177,6 +177,37 @@
 				</dict>
 			</array>
 		</dict>
+		<dict>
+			<key>begin</key>
+			<string>=\s*\K`</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.ini</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?&lt;!\\)(?:\\\\)*\K`</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.ini</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.interpolated.ini</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#escape</string>
+				</dict>
+			</array>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
