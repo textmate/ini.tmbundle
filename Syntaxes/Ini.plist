@@ -141,10 +141,8 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>match</key>
-					<string>\\.</string>
-					<key>name</key>
-					<string>constant.character.escape.ini</string>
+					<key>include</key>
+					<string>#escape</string>
 				</dict>
 			</array>
 		</dict>
@@ -171,8 +169,25 @@
 			</dict>
 			<key>name</key>
 			<string>string.quoted.double.ini</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#escape</string>
+				</dict>
+			</array>
 		</dict>
 	</array>
+	<key>repository</key>
+	<dict>
+		<key>escape</key>
+		<dict>
+			<key>match</key>
+			<string>\\.</string>
+			<key>name</key>
+			<string>constant.character.escape.ini</string>
+		</dict>
+	</dict>
 	<key>scopeName</key>
 	<string>source.ini</string>
 	<key>uuid</key>
