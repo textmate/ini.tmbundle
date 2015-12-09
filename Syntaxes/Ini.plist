@@ -117,7 +117,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>'</string>
+			<string>=\s*\K\s*'</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -127,7 +127,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>'</string>
+			<string>(?&lt;!\\)(?:\\\\)*\K'</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
@@ -141,16 +141,14 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>match</key>
-					<string>\\.</string>
-					<key>name</key>
-					<string>constant.character.escape.ini</string>
+					<key>include</key>
+					<string>#escape</string>
 				</dict>
 			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>"</string>
+			<string>=\s*\K"</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -160,7 +158,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>"</string>
+			<string>(?&lt;!\\)(?:\\\\)*\K"</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
@@ -171,8 +169,77 @@
 			</dict>
 			<key>name</key>
 			<string>string.quoted.double.ini</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#escape</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>=\s*\K`</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.ini</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?&lt;!\\)(?:\\\\)*\K`</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.ini</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.interpolated.ini</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#escape</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>=\s*(?!$)\K</string>
+			<key>contentName</key>
+			<string>string.unquoted.ini</string>
+			<key>end</key>
+			<string>\s*(?=[\n;#])</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#escape</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b[0-9]+\b</string>
+					<key>name</key>
+					<string>constant.numeric.ini</string>
+				</dict>
+			</array>
 		</dict>
 	</array>
+	<key>repository</key>
+	<dict>
+		<key>escape</key>
+		<dict>
+			<key>match</key>
+			<string>\\.</string>
+			<key>name</key>
+			<string>constant.character.escape.ini</string>
+		</dict>
+	</dict>
 	<key>scopeName</key>
 	<string>source.ini</string>
 	<key>uuid</key>
