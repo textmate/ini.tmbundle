@@ -6,6 +6,10 @@
 	<array>
 		<string>ini</string>
 		<string>conf</string>
+		<string>cfg</string>
+		<string>editorconfig</string>
+		<string>Pipfile</string>
+		<string>hgrc</string>
 	</array>
 	<key>keyEquivalent</key>
 	<string>^~I</string>
