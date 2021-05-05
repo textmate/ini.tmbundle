@@ -82,19 +82,19 @@
 		<dict>
 			<key>captures</key>
 			<dict>
-				<key>1</key>
+				<key>2</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.other.definition.ini</string>
 				</dict>
-				<key>2</key>
+				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.separator.key-value.ini</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b([a-zA-Z0-9_.-]+)\b\s*(=)</string>
+			<string>^([ \t]+)?\b([a-zA-Z0-9_.- '"]+)\b\s*(=)</string>
 		</dict>
 		<dict>
 			<key>captures</key>
